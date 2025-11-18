@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Brainbay.Web.Models.CharacterViewModel>
+
+<h2>All Characters</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Species</th>
+            <th>Gender</th>
+            <th>Origin</th>
+            <th>Location</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Name</td>
+                <td>@c.Status</td>
+                <td>@c.Species</td>
+                <td>@c.Gender</td>
+                <td>@c.Origin</td>
+                <td>@c.Location</td>
+                <td>
+                    <img src="@c.ImageUrl" alt="@c.Name" width="80" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-action="Create">Add New Character</a>

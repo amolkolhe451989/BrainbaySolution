@@ -1,0 +1,36 @@
+﻿@model Brainbay.Web.Models.CharacterViewModel
+
+<h2>Add Character</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <input asp-for="Status" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Species"></label>
+        <input asp-for="Species" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <input asp-for="Gender" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Origin"></label>
+        <input asp-for="Origin" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Location"></label>
+        <input asp-for="Location" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
