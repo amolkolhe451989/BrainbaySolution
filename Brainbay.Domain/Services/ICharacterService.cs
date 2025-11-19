@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Brainbay.Domain.Services
 {
-    public interface ICharacteropsService
+    public interface ICharacterService
     {
         //console
         Task<List<Character>> GetAliveCharactersAsync();
 
     }
-    public interface ICharacteropsService : ICharacteropsService
+    public interface ICharacteropsService 
     {
         //web
         Task<(IReadOnlyList<Character> items, bool fromDatabase)> GetAllAsync();

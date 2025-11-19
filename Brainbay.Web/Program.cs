@@ -14,7 +14,10 @@ builder.Services.AddMemoryCache();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.Services.AddScoped<CharacterService>();
+builder.Services.AddScoped<ICharacterRepository, CharacterRepository>();
 builder.Services.AddScoped<CharacterService>();
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())

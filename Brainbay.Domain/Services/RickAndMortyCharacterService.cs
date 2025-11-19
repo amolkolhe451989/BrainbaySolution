@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Brainbay.Domain.Services
 {
-    public class RickAndMortyCharacterService : ICharacteropsService
+    public class RickAndMortyCharacterService : ICharacterService
     {
         private readonly HttpClient _client;
 

@@ -12,7 +12,7 @@ var host = Host.CreateDefaultBuilder(args)
         services.AddDbContext<AppDbContext>(o =>
             o.UseSqlServer("Server=localhost;Database=AMEX;User Id=sa;Password=Sai@12345;Encrypt=False;TrustServerCertificate=True;"));
 
-        HttpClientFactoryServiceCollectionExtensions.AddHttpClient<ICharacteropsService, RickAndMortyCharacterService>(services, (Action<HttpClient>)(c =>
+        HttpClientFactoryServiceCollectionExtensions.AddHttpClient<ICharacterService, RickAndMortyCharacterService>(services, (Action<HttpClient>)(c =>
         {
             c.BaseAddress = new Uri("https://rickandmortyapi.com/api/");
         }));
@@ -25,7 +25,7 @@ using var scope = host.Services.CreateScope();
 var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 await db.Database.EnsureCreatedAsync();
 
-var service = scope.ServiceProvider.GetRequiredService<ICharacteropsService>();
+var service = scope.ServiceProvider.GetRequiredService<ICharacterService>();
 var repo = scope.ServiceProvider.GetRequiredService<ICharacterRepository>();
 
 Console.WriteLine("Fetching characters from Rick and Morty API...");

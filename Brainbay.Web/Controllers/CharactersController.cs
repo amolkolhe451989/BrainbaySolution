@@ -9,10 +9,12 @@ namespace Brainbay.Web.Controllers
     public class CharactersController : Controller
     {
         private readonly CharacterService _service;
-        public CharactersController(CharacterService service) => _service = service;
-
+        public CharactersController(CharacterService service)
+        {
+            _service = service;
+        }
         // GET /characters
-       [HttpGet("Index")]
+        [HttpGet("Index")]
         public async Task<IActionResult> Index()
         {
             var (items, fromDb) = await _service.GetAllAsync();
